@@ -1,31 +1,45 @@
 import React from "react";
 import { StyleSheet, View, Image, Text, ImageBackground } from "react-native";
+import AppButton from "../components/AppButton";
 import colors from "../config/colors";
 
 export default function Welcome() {
   return (
-    <View style={style.container}>
+    <View style={styles.container}>
       <ImageBackground
-        style={style.image}
+        blurRadius={2}
+        style={styles.image}
         source={require("../assets/background.jpg")}
       >
-        <View style={style.box}>
+        <View style={styles.box}>
           <Image
-            style={style.logo}
+            style={styles.logo}
             source={require("../assets/logo-red.png")}
           />
-          <Text>Sell What You Don't Need</Text>
+          <Text style={styles.tagline}>Sell What You Don't Need</Text>
         </View>
-        <View style={style.control}>
-          <View style={style.button1} />
-          <View style={style.button2} />
+        <View style={styles.control}>
+          <AppButton
+            title="Login"
+            handlePress={() => {
+              console.log("click");
+            }}
+          />
+          <View style={{ height: 10 }}></View>
+          <AppButton
+            title="Register"
+            color={colors.secondary}
+            handlePress={() => {
+              console.log("click");
+            }}
+          />
         </View>
       </ImageBackground>
     </View>
   );
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     backgroundColor: "blue",
     flex: 1,
@@ -44,17 +58,13 @@ const style = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  button1: {
-    height: 50,
-    backgroundColor: colors.primary,
-    alignSelf: "stretch",
-  },
-  button2: {
-    height: 50,
-    backgroundColor: colors.secondary,
-    alignSelf: "stretch",
-  },
   control: {
     bottom: 0,
+    paddingHorizontal: 10,
+  },
+  tagline: {
+    fontSize: 25,
+    fontWeight: "600",
+    marginTop: 10,
   },
 });
