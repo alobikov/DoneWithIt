@@ -1,17 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import Welcome from "./app/screens/Welcome";
+import Welcome from "./app/screens/WelcomeScreen";
 import Card from "./app/components/Card";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Card
-        title="Inflatable SUP for sale"
-        subTitle="$200"
-        image={require("./app/assets/sup.jpg")}
-      />
+      <ListingDetailsScreen />
       {/* <Welcome /> */}
       {/* <ViewImageScreen /> */}
       {/* <StatusBar style="auto" /> */}
