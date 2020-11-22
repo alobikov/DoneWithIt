@@ -11,11 +11,13 @@ import Screen from "./app/components/Screen";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
+import PrettyTextInput from "./app/components/PrettyTextInput";
 
 export default function App() {
   return (
     <Screen>
-      <ListingsScreen />
+      <PrettyTextInput icon="email" placeholder="Username" />
+      {/* <ListingsScreen /> */}
       {/* <AccountScreen /> */}
       {/* <ListItem title="Hello" ImageComponent={<Icon name="email" />} /> */}
       {/* <ListingDetailsScreen /> */}
