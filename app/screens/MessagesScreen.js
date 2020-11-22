@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, FlatList } from "react-native";
+import { StyleSheet, FlatList, RefreshControl } from "react-native";
 import ListItem from "../components/ListItem";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 import Screen from "../components/Screen";
@@ -22,8 +22,21 @@ const initialMessages = [
 
 export default function MessagesScreen() {
   const [messages, setMessages] = useState(initialMessages);
+  const [refreshing, setRefreshing] = useState(false);
   const handleDelete = (item) => {
     setMessages(messages.filter((m) => m.id !== item.id));
+  };
+
+  const onRefresh = () => {
+    setRefreshing(false);
+    setMessages([
+      {
+        id: 2,
+        title: "Arly Melania",
+        description: "1 Listing",
+        image: require("../assets/mela_sad_sm.jpg"),
+      },
+    ]);
   };
   return (
     <Screen>
@@ -44,6 +57,13 @@ export default function MessagesScreen() {
           />
         )}
         ItemSeparatorComponent={Separator}
+        refreshControl={
+          <RefreshControl
+            //refresh control used for the Pull to Refresh
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+          />
+        }
       ></FlatList>
     </Screen>
   );
