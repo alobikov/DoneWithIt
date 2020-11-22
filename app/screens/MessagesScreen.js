@@ -30,6 +30,7 @@ export default function MessagesScreen() {
             title={item.title}
             subTitle={item.description}
             image={item.image}
+            onPress={() => {}}
           />
         )}
         ItemSeparatorComponent={Separator}
