@@ -8,7 +8,13 @@ import {
 } from "react-native";
 import colors from "../config/colors";
 
-export default function ListItem({ image, title, subTitle, onPress }) {
+export default function ListItem({
+  image,
+  title,
+  subTitle,
+  onPress,
+  renderRightActions,
+}) {
   return (
     <TouchableHighlight onPress={onPress} underlayColor={colors.lgrey}>
       <View style={styles.container}>
@@ -17,6 +23,8 @@ export default function ListItem({ image, title, subTitle, onPress }) {
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.subTitle}>{subTitle}</Text>
         </View>
+        <View style={{ flex: 1 }}></View>
+        {renderRightActions()}
       </View>
     </TouchableHighlight>
   );
