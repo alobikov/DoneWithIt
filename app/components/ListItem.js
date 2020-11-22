@@ -14,17 +14,19 @@ export default function ListItem({
   subTitle,
   onPress,
   renderRightActions,
+  ImageComponent,
 }) {
   return (
     <TouchableHighlight onPress={onPress} underlayColor={colors.lgrey}>
       <View style={styles.container}>
-        <Image style={styles.image} source={image} />
+        {ImageComponent}
+        {image && <Image style={styles.image} source={image} />}
         <View style={styles.detailContainer}>
           <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subTitle}>{subTitle}</Text>
+          {subTitle && <Text style={styles.subTitle}>{subTitle}</Text>}
         </View>
         <View style={{ flex: 1 }}></View>
-        {renderRightActions()}
+        {renderRightActions && renderRightActions()}
       </View>
     </TouchableHighlight>
   );
@@ -35,8 +37,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 15,
   },
+  detailContainer: {
+    marginLeft: 10,
+    justifyContent: "center",
+  },
   image: {
-    marginRight: 10,
     width: 70,
     height: 70,
     borderRadius: 35,

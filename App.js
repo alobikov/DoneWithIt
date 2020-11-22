@@ -8,16 +8,22 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
 import Icon from "./app/components/Icon";
 import Screen from "./app/components/Screen";
+import ListItem from "./app/components/ListItem";
 
 export default function App() {
   return (
     <Screen>
+      <ListItem
+        title="Hello"
+        // subTitle="Goodbye"
+        ImageComponent={<Icon name="email" />}
+      />
       {/* <ListingDetailsScreen /> */}
       {/* <Welcome /> */}
       {/* <ViewImageScreen /> */}
       {/* <StatusBar style="auto" /> */}
       {/* <MessagesScreen /> */}
-      <Icon name="email" size={50} backgroundColor="green" iconColor="white" />
+      {/* <Icon name="email" size={50} backgroundColor="green" iconColor="white" /> */}
     </Screen>
   );
 }
