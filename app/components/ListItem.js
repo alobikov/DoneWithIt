@@ -14,12 +14,12 @@ export default function ListItem({
   subTitle,
   onPress,
   renderRightActions,
-  ImageComponent,
+  IconComponent,
 }) {
   return (
     <TouchableHighlight onPress={onPress} underlayColor={colors.lgrey}>
       <View style={styles.container}>
-        {ImageComponent}
+        {IconComponent}
         {image && <Image style={styles.image} source={image} />}
         <View style={styles.detailContainer}>
           <Text style={styles.title}>{title}</Text>
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     padding: 15,
+    backgroundColor: "white",
   },
   detailContainer: {
     marginLeft: 10,
