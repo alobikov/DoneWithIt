@@ -9,13 +9,13 @@ import MessagesScreen from "./app/screens/MessagesScreen";
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
+    <View>
       {/* <ListingDetailsScreen /> */}
       {/* <Welcome /> */}
       {/* <ViewImageScreen /> */}
       {/* <StatusBar style="auto" /> */}
       <MessagesScreen />
-    </SafeAreaView>
+    </View>
   );
 }
 
