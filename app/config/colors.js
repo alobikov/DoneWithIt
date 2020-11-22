@@ -4,4 +4,5 @@ export default {
   black: "#000",
   white: "#fff",
   midgrey: "#6e6969",
+  lgrey: "#ccc",
 };

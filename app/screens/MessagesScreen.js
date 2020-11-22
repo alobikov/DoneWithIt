@@ -2,18 +2,19 @@ import React from "react";
 import { StyleSheet, FlatList } from "react-native";
 import ListItem from "../components/ListItem";
 import Screen from "../components/Screen";
+import Separator from "../components/Separator";
 
 const messages = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title: "Aleksej Lobikov",
+    description: "3 Listings",
     image: require("../assets/aleksej_sm.jpg"),
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
+    title: "Arly Melania",
+    description: "1 Listing",
     image: require("../assets/mela_sad_sm.jpg"),
   },
 ];
@@ -31,6 +32,7 @@ export default function MessagesScreen() {
             image={item.image}
           />
         )}
+        ItemSeparatorComponent={Separator}
       ></FlatList>
     </Screen>
   );
